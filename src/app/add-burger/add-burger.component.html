@@ -1,0 +1,14 @@
+<form class="form-group" (ngSubmit)="save()">
+    <label for="name">Burger name</label>
+    <input id="name" class="form-control" type="text" [(ngModel)]="name" name="name" #nameBurger="ngModel" required/>
+    <div *ngIf="nameBurger.invalid && nameBurger.dirty" class="alert alert-danger">
+      Ya une erreur dans le formulaire !
+    </div>
+    <select required [(ngModel)]="pain" class="form-control" name="pain">
+      <option *ngFor="let pain of ps.getAll()" [ngValue]="pain">{{ pain.nom }}</option>
+    </select>
+  
+    <button class="btn btn-primary" [disabled]="nameBurger.invalid">Save</button>
+  </form>
+  
+  

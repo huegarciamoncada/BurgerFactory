@@ -1,0 +1,26 @@
+<form class="form-group" (ngSubmit)="save()">
+  <label for="name">Add Légumes</label>  
+  <select required [(ngModel)]="legume" class="form-control" name="legume">
+    <option *ngFor="let legume of ls.getAll()" [ngValue]="legume">{{ legume.nom }}</option>
+  </select>
+  <button class="btn btn-primary">Save</button>
+</form>
+
+<!----<p *ngFor="let country of cs.getAll()">{{ country.id }} {{ country.name }}</p>
+<form class="form-group" (ngSubmit)="save()">
+  <input id="name" class="form-control" type="text" [(ngModel)]="country.name" name="name"/>
+  <label for="name">Town name</label>
+  <input id="name" class="form-control" type="text" [(ngModel)]="name" name="name" #nameCountry="ngModel" required/>
+  <div *ngIf="nameCountry.invalid && nameCountry.dirty" class="alert alert-danger">
+    Ya une erreur dans le formulaire !
+  </div>
+  <select required [(ngModel)]="country" class="form-control" name="country">
+    <option *ngFor="let country of cs.getAll()" [ngValue]="country">{{ country.name }}</option>
+  </select>
+
+  <button class="btn btn-primary" [disabled]="nameCountry.invalid">Save</button>
+</form>-->
+
+<p *ngFor="let legume of ls.getAll()">{{ legume.id }} {{ legume.nom }}</p>
+
+
